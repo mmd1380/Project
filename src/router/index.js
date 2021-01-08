@@ -9,8 +9,8 @@ const routes = [
     path: "/",
     name: "Home",
     component: Home,
-    redirect: {
-      name: "Login"
+    meta: {
+      authRequired: true
     }
   },
   {
@@ -24,6 +24,14 @@ const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
+})
+
+// set navigation guard for routes
+
+router.beforeEach(async (to, from, next) => {
+  const { state: { authentication } } = (await import("@/store")).default;
+  if(!authentication && to.name !== "Login") next({ name: "Login" });
+  next();
 })
 
 export default router
