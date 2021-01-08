@@ -1,70 +1,90 @@
 <template>
   <v-card
-      shaped
-      class="pa-8 mt-10 mx-auto elevation-16"
-      max-width="400"
+      class="pa-8 my-auto mx-auto elevation-5 Appfont"
+      max-width="360"
+      height="487"
   >
     <v-row justify="center">
-      <v-col cols="5">
-        <v-img
-          src="@/assets/person.png"
-        ></v-img>
-      </v-col>
+        <v-card-text>
+          <h2 class="blue--text text--darken-3">
+            ورود به سیستم
+          </h2>
+          <p class="mt-5 black--text">
+            لطفا برای ورود به سیستم نام کاربری و رمز عبور خود را وارد نمایید.
+          </p>
+        </v-card-text>
     </v-row>
     <v-row>
-    </v-row>
-    <v-row>
-      <v-col cols="12">
+      <v-col>
         <v-text-field
-            filled
+            class="mt-4"
             label="نام کاربری"
-            append-icon="mdi-account"
+            :rules="rules"
+            hide-details="auto"
+            append-icon="mdi-account-outline"
         ></v-text-field>
-      </v-col>
-      <v-col cols="12">
-        <v-text-field
-          filled
-          :type="showPass ? 'password': 'text'"
-          label="رمز عبور"
-          :append-icon="showPass ? 'mdi-eye': 'mdi-eye-off'"
-          @click:append="showPass = !showPass"
-        ></v-text-field>
-      </v-col>
-      <v-col cols="12">
-        <v-btn
-          color="primary"
-          depressed
-          width="100%"
-          height="48"
-          @click="authentication()"
-        >
-          <span class="font-weight-bold">ورود</span>
-        </v-btn>
-      </v-col>
-      <v-col class="text-center">
-        <v-btn
-          text
-        >
-          فراموشی رمز عبور
-        </v-btn>
       </v-col>
     </v-row>
+    <v-row>
+      <v-col class="mt-4">
+        <v-text-field
+            label="رمز عبور"
+            :type="showPass ? 'password': 'text'"
+            hide-details="auto"
+            :append-icon="showPass ? 'mdi-eye-outline': 'mdi-eye-off-outline'"
+            @click:append="showPass = !showPass"
+        ></v-text-field>
+      </v-col>
+    </v-row>
+      <v-row   class="mt-7">
+        <v-col cols="12" class="pb-1">
+          <v-btn
+              color="blue darken-2 white--text"
+              depressed
+              width="100%"
+              height="48"
+              @click="authentication()"
+          >
+            <span class="font-weight-bold">ورود به سیستم</span>
+          </v-btn>
+        </v-col>
+        <v-col class="text-center pt-0 mt-0">
+          <v-btn
+              text
+              width="100%"
+              class="blue--text text--darken-3 mt-0 font-weight-bold"
+          >
+            فراموشی رمز عبور
+          </v-btn>
+        </v-col>
+      </v-row>
   </v-card>
 </template>
 
 <script>
 export default {
   data: () => ({
-    showPass: true
+    showPass: true,
+    rules: [
+      value => !!value || 'پر کردن این فیلد الزامیست.',
+      value => (value && value.length >= 5) || 'حداقل 5 کاراکتر',
+    ],
   }),
   methods: {
     authentication() {
-      // call api
 
-      //
-      this.$store.commit("SET_AUTHENTICATION", true)
       this.$router.push({ name: "Home" })
     }
   }
 }
 </script>
+<style>
+.Appfont{
+  font-family: IRANYekanRegular;
+}
+.text{
+  font-size: 16px;
+  color: black;
+  text-align: right;
+}
+</style>
