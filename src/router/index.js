@@ -16,7 +16,19 @@ const routes = [
   {
     path: "/auth",
     name: "Login",
-    component: () => import("@/pages/Login")
+    component: () => import("@/pages/Login"),
+    // children: [
+    //   {
+    //     path: "forget",
+    //     name: "Forget",
+    //     component: () => import("@/pages/forget")
+    //   }
+    // ]
+  },
+  {
+    path: "/forget",
+    name: "Forget",
+    component: () => import("@/pages/forget")
   }
 ]
 
@@ -30,7 +42,8 @@ const router = new VueRouter({
 
 router.beforeEach(async (to, from, next) => {
   const { state: { authentication } } = (await import("@/store")).default;
-  if(!authentication && to.name !== "Login") next({ name: "Login" });
+  console.log(!authentication && (to.name !== "Login" || to.name == "Forget"))
+  if(!authentication && (to.name !== "Login" && to.name !== "Forget")) next({ name: "Login" });
   next();
 })
 

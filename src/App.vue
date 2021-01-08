@@ -1,16 +1,23 @@
 <template>
   <v-app>
-    <default>
-      <router-view></router-view>
-    </default>
+<!--    <default>-->
+<!--      <router-view></router-view>-->
+<!--    </default>-->
+    <keep-alive>
+      <component :is="$store.state.layout">
+        <router-view></router-view>
+      </component>
+    </keep-alive>
   </v-app>
 </template>
 
 <script>
 import Default from "@/layout/default";
+import Auth from "@/layout/auth"
+
 export default {
   name: 'App',
-  components: {Default},
+  components: {Default, Auth},
   data: () => ({
     //
   }),

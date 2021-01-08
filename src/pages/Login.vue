@@ -53,6 +53,7 @@
               text
               width="100%"
               class="blue--text text--darken-3 mt-0 font-weight-bold"
+              :to="{ name: 'Forget' }"
           >
             فراموشی رمز عبور
           </v-btn>
@@ -73,6 +74,7 @@ export default {
   methods: {
     authentication() {
       this.$store.commit("SET_AUTHENTICATION", true)
+      this.$store.commit("SET_LAYOUT", "Default")
       this.$router.push({ name: "Home" })
     }
   }
