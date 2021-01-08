@@ -1,42 +1,51 @@
 <template>
-  <v-card
-      class="pa-8 my-auto mx-auto elevation-5 Appfont"
-      max-width="360"
-      height="487"
-  >
-    <v-row justify="center">
+    <v-card
+        style="top: 50%"
+        class="mx-auto mt-auto elevation-5 Appfont "
+        max-width="360"
+        height="487"
+    >
+
+      <v-row class="pr-8 mb-2" justify="center">
         <v-card-text>
-          <h2 class="blue--text text--darken-3">
+          <h2 class="blue--text text--darken-3 float-right">
             ورود به سیستم
           </h2>
+        </v-card-text>
+      </v-row>
+
+      <v-divider></v-divider>
+
+      <v-row class="px-8">
+        <v-card-text>
           <p class="mt-5 black--text">
             لطفا برای ورود به سیستم نام کاربری و رمز عبور خود را وارد نمایید.
           </p>
         </v-card-text>
-    </v-row>
-    <v-row>
-      <v-col>
-        <v-text-field
-            class="mt-4"
-            label="نام کاربری"
-            :rules="rules"
-            hide-details="auto"
-            append-icon="mdi-account-outline"
-        ></v-text-field>
-      </v-col>
-    </v-row>
-    <v-row>
-      <v-col class="mt-4">
-        <v-text-field
-            label="رمز عبور"
-            :type="showPass ? 'password': 'text'"
-            hide-details="auto"
-            :append-icon="showPass ? 'mdi-eye-outline': 'mdi-eye-off-outline'"
-            @click:append="showPass = !showPass"
-        ></v-text-field>
-      </v-col>
-    </v-row>
-      <v-row   class="mt-7">
+      </v-row>
+      <v-row class="px-8">
+        <v-col>
+          <v-text-field
+              class="mt-4"
+              label="نام کاربری"
+              :rules="rules"
+              hide-details="auto"
+              append-icon="mdi-account-outline"
+          ></v-text-field>
+        </v-col>
+      </v-row>
+      <v-row class="px-8">
+        <v-col class="mt-4">
+          <v-text-field
+              label="رمز عبور"
+              :type="showPass ? 'password': 'text'"
+              hide-details="auto"
+              :append-icon="showPass ? 'mdi-eye-outline': 'mdi-eye-off-outline'"
+              @click:append="showPass = !showPass"
+          ></v-text-field>
+        </v-col>
+      </v-row>
+      <v-row   class="mt-7 px-8">
         <v-col cols="12" class="pb-1">
           <v-btn
               color="blue darken-2 white--text"
@@ -59,7 +68,7 @@
           </v-btn>
         </v-col>
       </v-row>
-  </v-card>
+    </v-card>
 </template>
 
 <script>
