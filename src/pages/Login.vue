@@ -72,7 +72,7 @@ export default {
   }),
   methods: {
     authentication() {
-
+      this.$store.commit("SET_AUTHENTICATION", true)
       this.$router.push({ name: "Home" })
     }
   }
