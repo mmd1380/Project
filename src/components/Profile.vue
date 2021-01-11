@@ -81,7 +81,8 @@
                     />
                   </v-col>
 
-                  <v-col cols="4">
+                  <v-col  cols="12"
+                          md="4">
                     <v-text-field
                         label="آدرس"
                         class="purple-input"

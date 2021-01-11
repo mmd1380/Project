@@ -16,7 +16,7 @@
               <v-icon>mdi-arrow-left-circle-outline</v-icon>
             </v-btn>
           </v-row>
-          <v-row class="pr-2 mb-2" justify="center">
+          <v-row class="mb-2" justify="center">
             <v-card-text>
               <h2 class="blue--text text--darken-3 float-right">
                 ارسال کد
@@ -24,14 +24,14 @@
             </v-card-text>
           </v-row>
           <v-divider></v-divider>
-          <v-row class="px-8">
+          <v-row class="">
             <v-card-text>
               <p class="mt-5 black--text">
                 کد اعتبار سنجی به شماره {{ phoneNO }} ارسال شد.
               </p>
             </v-card-text>
           </v-row>
-          <v-row class="px-8">
+          <v-row>
             <v-col>
               <v-text-field
                 class="mt-4"
@@ -40,7 +40,7 @@
               ></v-text-field>
             </v-col>
           </v-row>
-          <v-row class="my-4 px-8">
+          <v-row class="my-4 mt-7">
             <v-btn
                 color="blue darken-2 white--text"
                 depressed
@@ -51,7 +51,7 @@
               <span class="font-weight-bold">تایید</span>
             </v-btn>
           </v-row>
-          <v-row class="my-5 px-8">
+          <v-row class="my-5">
             <timeCounter
               v-if="counter.start"
               v-model="counter"
@@ -76,14 +76,14 @@
             </v-card-text>
           </v-row>
           <v-divider></v-divider>
-          <v-row class="px-8">
+          <v-row>
             <v-card-text>
               <p class="mt-5 black--text">
                 لطفا برای فراموشی رمز عبور شماره موبایل خود را وارد نمایید.
               </p>
             </v-card-text>
           </v-row>
-          <v-row class="px-8">
+          <v-row>
             <v-col>
               <v-text-field
                 class="mt-4"
@@ -94,7 +94,7 @@
               ></v-text-field>
             </v-col>
           </v-row>
-          <v-row class="my-4 px-8">
+          <v-row class="my-4 mt-7">
             <v-btn
               color="blue darken-2 white--text"
               depressed
@@ -108,7 +108,7 @@
         </v-stepper-content>
 
         <v-stepper-content step="2">
-          <v-row class="pr-2 mb-2" justify="center">
+          <v-row class="mb-2" justify="center">
             <v-card-text>
               <h2 class="blue--text text--darken-3 float-right">
                 ورود به سیستم
@@ -118,14 +118,14 @@
 
           <v-divider></v-divider>
 
-          <v-row class="px-8">
+          <v-row>
             <v-card-text>
               <p class="mt-5 black--text">
                 لطفا برای ورود به سیستم نام کاربری و رمز عبور خود را وارد نمایید.
               </p>
             </v-card-text>
           </v-row>
-          <v-row class="px-8">
+          <v-row>
             <v-col>
               <v-text-field
                 class="mt-4"
@@ -136,7 +136,7 @@
               ></v-text-field>
             </v-col>
           </v-row>
-          <v-row class="px-8">
+          <v-row>
             <v-col class="mt-4">
               <v-text-field
                 label="رمز عبور"
@@ -147,7 +147,7 @@
               ></v-text-field>
             </v-col>
           </v-row>
-          <v-row class="mt-7 px-8">
+          <v-row class="mt-7">
             <v-col cols="12" class="pb-1">
               <v-btn
                 color="blue darken-2 white--text"
@@ -185,7 +185,7 @@ export default {
     showPass: true,
     phoneNO: "09391234565",
     counter: {
-      time: 10,
+      time: 59,
       start: false
     },
     el: 2,

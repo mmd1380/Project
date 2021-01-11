@@ -1,11 +1,10 @@
 <template>
-  <v-card>
+  <v-card >
     <v-navigation-drawer
       style="border-left: solid 1px rgba(0, 0, 0, 0.2); border-radius: 0"
     >
-      <v-list-item class="px-2">
+      <v-list-item style="height: 60px">
 
-        <v-list-item-title></v-list-item-title>
 
       </v-list-item>
 
@@ -17,13 +16,14 @@
           :key="item.title"
           :to="item.link"
           link
+
         >
           <v-list-item-icon>
-            <v-icon>{{ item.icon }}</v-icon>
+            <v-icon size="25">{{ item.icon }}</v-icon>
           </v-list-item-icon>
 
           <v-list-item-content>
-            <v-list-item-title>{{ item.title }}</v-list-item-title>
+            <v-list-item-title style="height: 35px" class="menu">{{ item.title }}</v-list-item-title>
           </v-list-item-content>
         </v-list-item>
       </v-list>
@@ -42,3 +42,9 @@ export default {
   }),
 }
 </script>
+<style>
+.menu{
+  font-size: 16px !important;
+  font-family: IRANYekanBold;
+}
+</style>

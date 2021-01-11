@@ -21,7 +21,7 @@
 export default {
   name: "SMSPassword",
   data: () => ({
-    time: "00:00",
+    time: "00:59",
     disable: true
   }),
   mounted() {
@@ -34,7 +34,7 @@ export default {
         if(time >= 0) {
           const min = (time / 60) | 0;
           let sec = time % 60;
-          if(sec < 10) sec = `0${sec}`;
+          if(sec < 30) sec = `0${sec}`;
           this.time = `0${min}:${sec}`;
         } else {
           clearInterval(val);
