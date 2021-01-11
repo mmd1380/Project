@@ -25,5 +25,9 @@ name: "default",
   height: 100vh;
   overflow: auto;
   background-color: #f5f5f5 !important;
+  color: #4a4949;
+}
+.content {
+  padding: 12px;
 }
 </style>
