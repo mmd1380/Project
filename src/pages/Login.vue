@@ -51,6 +51,12 @@
               <span class="font-weight-bold">تایید</span>
             </v-btn>
           </v-row>
+          <v-row class="my-5 px-8">
+            <timeCounter
+              v-if="counter.start"
+              v-model="counter"
+            ></timeCounter>
+          </v-row>
         </v-stepper-content>
         <v-stepper-content step="1">
           <v-row class="back_btn">
@@ -171,10 +177,17 @@
 </template>
 
 <script>
+import timeCounter from "@/components/timeCounter";
+
 export default {
+  components: { timeCounter },
   data: () => ({
     showPass: true,
     phoneNO: "09391234565",
+    counter: {
+      time: 10,
+      start: false
+    },
     el: 2,
     rules: [
       value => !!value || 'پر کردن این فیلد الزامیست.',
@@ -190,6 +203,7 @@ export default {
     postMobile() {
       // call api for forget password
       this.el = 0;
+      this.counter.start = true;
     }
   }
 }
