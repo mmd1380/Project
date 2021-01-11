@@ -4,15 +4,14 @@
       <v-toolbar-title>{{ title }}</v-toolbar-title>
       <v-spacer></v-spacer>
 
-      <v-toolbar-items class="px-2">
-        <v-btn rounded tile icon class="mx-2">
-          <v-icon>mdi-account</v-icon>
-        </v-btn>
-        <v-btn icon class="mx-2">
-          <v-icon>mdi-cog</v-icon>
-        </v-btn>
-        <v-btn icon class="mx-2">
-          <v-icon>mdi-bell</v-icon>
+      <v-toolbar-items class="pa-2">
+        <v-btn
+          v-for="icon in icons"
+          :key="icon.name"
+          icon
+          class="mx-1"
+        >
+          <v-icon>{{ icon.icon }}</v-icon>
         </v-btn>
       </v-toolbar-items>
     </v-toolbar>
@@ -23,7 +22,21 @@
 export default {
   name: "AppHeader",
   data: () => ({
-    title: "صفحه اصلی"
+    title: "صفحه اصلی",
+    icons: [
+      {
+        name: "profile",
+        icon: "mdi-account"
+      },
+      {
+        name: "setting",
+        icon: "mdi-cog"
+      },
+      {
+        name: "notifications",
+        icon: "mdi-bell"
+      },
+    ]
   })
 }
 </script>

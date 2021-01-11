@@ -13,7 +13,7 @@ const routes = [
   {
     path: "/auth",
     name: "Login",
-    component: () => import("@/pages/Login")
+    component: () => import("@/pages/Login"),
   },
   {
     path: "/dashboard",

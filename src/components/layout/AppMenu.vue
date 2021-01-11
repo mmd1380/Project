@@ -13,10 +13,10 @@
 
       <v-list dense>
         <v-list-item
-            v-for="item in items"
-            :key="item.title"
-            :to="item.link"
-            link
+          v-for="item in items"
+          :key="item.title"
+          :to="item.link"
+          link
         >
           <v-list-item-icon>
             <v-icon>{{ item.icon }}</v-icon>
