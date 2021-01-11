@@ -1,12 +1,14 @@
 <template>
   <div>
-    this is dashboard page
+    <Profile></Profile>
   </div>
 </template>
 
 <script>
+import Profile from "@/components/Profile";
 export default {
-name: "dashboard"
+name: "dashboard",
+  components: {Profile}
 }
 </script>
 
