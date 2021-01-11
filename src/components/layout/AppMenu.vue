@@ -23,6 +23,7 @@
         <v-list-item
             v-for="item in items"
             :key="item.title"
+            :to="item.link"
             link
         >
           <v-list-item-icon>
@@ -44,8 +45,8 @@ export default {
   data: () => ({
     drawer: true,
     items: [
-      { title: 'پروفایل', icon: 'mdi-account-outline' },
-      { title: 'خروج', icon: 'mdi-door' },
+      { title: 'پروفایل', icon: 'mdi-account-outline', link: "/dashboard" },
+      { title: 'خروج', icon: 'mdi-door', link: "/" },
     ],
     mini: true
   }),

@@ -8,27 +8,17 @@ const routes = [
   {
     path: "/",
     name: "Home",
-    component: Home,
-    meta: {
-      authRequired: true
-    }
+    component: Home
   },
   {
     path: "/auth",
     name: "Login",
-    component: () => import("@/pages/Login"),
-    // children: [
-    //   {
-    //     path: "forget",
-    //     name: "Forget",
-    //     component: () => import("@/pages/forget")
-    //   }
-    // ]
+    component: () => import("@/pages/Login")
   },
   {
-    path: "/forget",
-    name: "Forget",
-    component: () => import("@/pages/forget")
+    path: "/dashboard",
+    name: "Profile",
+    component: () => import("@/pages/dashboard")
   }
 ]
 

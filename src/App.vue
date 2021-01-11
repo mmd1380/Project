@@ -1,8 +1,5 @@
 <template>
   <v-app>
-<!--    <default>-->
-<!--      <router-view></router-view>-->
-<!--    </default>-->
     <keep-alive>
       <component :is="$store.state.layout">
         <router-view></router-view>
