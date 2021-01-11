@@ -1,17 +1,21 @@
 <template>
-  <div class="d-flex">
+  <div class="d-flex overflow-hidden">
     <AppMenu></AppMenu>
     <div class="view">
-      <slot></slot>
+      <AppHeader></AppHeader>
+      <div class="content">
+        <slot></slot>
+      </div>
     </div>
   </div>
 </template>
 
 <script>
 import AppMenu from "@/components/layout/AppMenu";
+import AppHeader from "@/components/layout/AppHeader";
 export default {
 name: "default",
-  components: {AppMenu}
+  components: {AppHeader, AppMenu}
 }
 </script>
 
@@ -19,5 +23,7 @@ name: "default",
 .view {
   width: 100%;
   height: 100vh;
+  overflow: auto;
+  background-color: #f5f5f5 !important;
 }
 </style>

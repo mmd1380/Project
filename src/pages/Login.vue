@@ -9,9 +9,9 @@
         <v-stepper-content step="1">
           <v-row class="back_btn">
             <v-btn
-                rounded
-                icon
-                @click="el = 2"
+              rounded
+              icon
+              @click="el = 2"
             >
               <v-icon>mdi-arrow-left-circle-outline</v-icon>
             </v-btn>
@@ -129,7 +129,6 @@ export default {
   data: () => ({
     showPass: true,
     el: 2,
-    showForgetPage: false,
     rules: [
       value => !!value || 'پر کردن این فیلد الزامیست.',
       value => (value && value.length >= 5) || 'حداقل 5 کاراکتر',

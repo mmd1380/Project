@@ -1,9 +1,9 @@
 <template>
   <v-card>
     <v-navigation-drawer
-        v-model="drawer"
-        :mini-variant.sync="mini"
-        permanent
+      v-model="drawer"
+      :mini-variant.sync="mini"
+      permanent
     >
       <v-list-item class="px-2">
 
